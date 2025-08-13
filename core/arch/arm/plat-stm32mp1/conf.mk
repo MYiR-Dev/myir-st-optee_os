@@ -15,10 +15,14 @@ flavor_dts_file-157F_ED1 = stm32mp157f-ed1.dts
 flavor_dts_file-157F_EV1 = stm32mp157f-ev1.dts
 
 flavor_dts_file-135F_DK = stm32mp135f-dk.dts
+flavor_dts_file-135X_MYIR256M = myb-stm32mp135x-256m.dts
+flavor_dts_file-135X_MYIR512M = myb-stm32mp135x-512m.dts
 
+flavorlist-256M = $(flavor_dts_file-135X_MYIR256M)
 flavorlist-cryp-512M = $(flavor_dts_file-157C_DK2) \
 		       $(flavor_dts_file-157F_DK2) \
-		       $(flavor_dts_file-135F_DK)
+		       $(flavor_dts_file-135F_DK) \
+		       $(flavor_dts_file-135X_MYIR512M)
 
 flavorlist-no_cryp-512M = $(flavor_dts_file-157A_DK1) \
 			  $(flavor_dts_file-157D_DK1)
@@ -59,7 +63,9 @@ flavorlist-MP15 = $(flavor_dts_file-157A_DHCOR_AVENGER96) \
 		  $(flavor_dts_file-157F_ED1) \
 		  $(flavor_dts_file-157F_EV1)
 
-flavorlist-MP13 = $(flavor_dts_file-135F_DK)
+flavorlist-MP13 = $(flavor_dts_file-135F_DK) \
+		  $(flavor_dts_file-135F_MYIR256M) \
+		  $(flavor_dts_file-135F_MYIR512M)
 
 # External device tree default path
 CFG_EXT_DTS ?= $(arch-dir)/dts/external-dt/optee
@@ -295,6 +301,10 @@ else
 CFG_STM32MP1_SCMI_SHM_BASE ?= 0
 endif
 $(call force,CFG_STM32MP1_SCMI_SHM_SIZE,0x1000)
+
+ifneq ($(filter $(CFG_EMBED_DTB_SOURCE_FILE),$(flavorlist-256M)),)
+CFG_DRAM_SIZE    ?= 0x10000000
+endif
 
 ifneq ($(filter $(CFG_EMBED_DTB_SOURCE_FILE),$(flavorlist-512M)),)
 CFG_DRAM_SIZE    ?= 0x20000000
