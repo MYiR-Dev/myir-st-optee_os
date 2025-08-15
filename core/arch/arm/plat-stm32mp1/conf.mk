@@ -15,6 +15,8 @@ flavor_dts_file-157F_ED1 = stm32mp157f-ed1.dts
 flavor_dts_file-157F_EV1 = stm32mp157f-ev1.dts
 
 flavor_dts_file-135F_DK = stm32mp135f-dk.dts
+flavor_dts_file-135F_DK += myb-stm32mp135x-512m.dts
+flavor_dts_file-135F_DK += myb-stm32mp135x-256m.dts
 flavor_dts_file-135X_MYIR256M = myb-stm32mp135x-256m.dts
 flavor_dts_file-135X_MYIR512M = myb-stm32mp135x-512m.dts
 

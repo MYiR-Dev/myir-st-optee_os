@@ -24,6 +24,13 @@
 		reg = <0xc0000000 0x10000000>;
 	};
 
+	magic_wol: magic_wol {
+        	compatible = "st,stm32-irq-notifier";
+        	interrupts-extended = <&exti 56 IRQ_TYPE_EDGE_FALLING>;
+        	wakeup-source;
+        	status = "okay";
+	};
+
 	reserved-memory {
 			#address-cells = <1>;
 			#size-cells = <1>;
