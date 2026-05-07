@@ -69,7 +69,8 @@ flavorlist-MP15 = $(flavor_dts_file-157A_DHCOR_AVENGER96) \
 
 flavorlist-MP13 = $(flavor_dts_file-135F_DK) \
 		  $(flavor_dts_file-135F_MYIR256M) \
-		  $(flavor_dts_file-135F_MYIR512M)
+		  $(flavor_dts_file-135F_MYIR512M) \
+		  $(flavor_dts_file-135X_MYIR512N512D)
 
 # External device tree default path
 CFG_EXT_DTS ?= $(arch-dir)/dts/external-dt/optee
