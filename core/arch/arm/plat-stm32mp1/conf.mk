@@ -19,12 +19,14 @@ flavor_dts_file-135F_DK += myb-stm32mp135x-512m.dts
 flavor_dts_file-135F_DK += myb-stm32mp135x-256m.dts
 flavor_dts_file-135X_MYIR256M = myb-stm32mp135x-256m.dts
 flavor_dts_file-135X_MYIR512M = myb-stm32mp135x-512m.dts
+flavor_dts_file-135X_MYIR512N512D = myb-stm32mp135x-512n512d.dts
 
 flavorlist-256M = $(flavor_dts_file-135X_MYIR256M)
 flavorlist-cryp-512M = $(flavor_dts_file-157C_DK2) \
 		       $(flavor_dts_file-157F_DK2) \
 		       $(flavor_dts_file-135F_DK) \
-		       $(flavor_dts_file-135X_MYIR512M)
+		       $(flavor_dts_file-135X_MYIR512M) \
+		       $(flavor_dts_file-135X_MYIR512N512D) \
 
 flavorlist-no_cryp-512M = $(flavor_dts_file-157A_DK1) \
 			  $(flavor_dts_file-157D_DK1)
